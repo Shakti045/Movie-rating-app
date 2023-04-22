@@ -32,16 +32,16 @@ function Search(){
         getdata();
     },[querry,page])
     return(
-        <>
-            <h1 className=" text-white font-bold text-2xl text-center">Result for:{querry}</h1>
-            <InfiniteScroll className=" w-[100vw] lg:grid lg:grid-cols-3 lg:pl-20 flex flex-col ml-6 text-white  gap-4" hasMore={pageinfo} dataLength={data.length} next={getnextpagedata} >
+        <div>
+            <h1 className=" font-bold text-xl bg-red-800 text-white p-2 inline rounded-md">Result for:{querry}</h1>
+            <InfiniteScroll className=" w-[100vw] lg:grid lg:grid-cols-3 lg:pl-20 pt-6  flex flex-col items-center text-white  gap-4" hasMore={pageinfo} dataLength={data.length} next={getnextpagedata} >
             {
             data.map((data,index)=>{
               return <Format key={index} {...data}></Format>
             })
           }
             </InfiniteScroll>
-        </>
+        </div>
     )
 }
 

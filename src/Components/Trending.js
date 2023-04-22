@@ -15,6 +15,7 @@ function Trending(){
        setdata(results);
       
     }
+  
     useEffect(()=>{
         fetchdata();
     },[type,period])
@@ -27,17 +28,17 @@ function Trending(){
       })
      }
     return (
-        <div className="text-white">
-            <div className=" flex justify-around">
-            <h1>Trending</h1>
-            <div className=" flex gap-4">
-                <button onClick={()=>settype("movie")}>Movies</button>
-                <button onClick={()=>settype("tv")}>Tv Shows</button>
-                <button onClick={()=>setperiod("day")}>Day</button>
-                <button onClick={()=>setperiod("week")}>Week</button>
+        <div className="text-white pt-6">
+            <div className=" lg:flex justify-around">
+            <h1 className=" font-bold text-xl bg-red-800 text-white p-2 flex items-center justify-center rounded-md">Trending</h1>
+            <div className=" text-lg   bg-white rounded-md p-2 text-blue-950  flex items-center justify-center lg:gap-4">
+                <button  className="  p-2 rounded-md focus:bg-yellow-500"  onClick={()=>settype("movie")}>Movies</button>
+                <button  className=" p-2 rounded-md focus:bg-yellow-500" onClick={()=>settype("tv")}>Tv Shows</button>
+                <button  className=" p-2 rounded-md focus:bg-yellow-500" onClick={()=>setperiod("day")}>Day</button>
+                <button  className=" p-2 rounded-md focus:bg-yellow-500" onClick={()=>setperiod("week")}>Week</button>
             </div>
             </div>
-            <div ref={reference} className=" relative flex gap-4 p-6 overflow-x-auto">
+            <div ref={reference} className=" ovf relative flex gap-4 pt-6 overflow-x-auto">
          {
             data.map((item)=>{
                 return <Format key={item?.id} {...item}></Format>

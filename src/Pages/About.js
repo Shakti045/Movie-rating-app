@@ -34,15 +34,15 @@ function About(){
         fetchimage();
     },[type,id])
     return (
-        <div className=" pl-6 relative">
-       <div>
-        <img className=" w-[100vw] h-[80vh]  opacity-10 -z-30" src={imgurl+about?.poster_path}></img>
+        <div className="pl-6 relative">
+       {/* <div>
+        <img className=" w-[100vw] h-[80vh] opacity-5 -z-30" src={imgurl+about?.poster_path}></img>
        
        
-        </div>
+        </div> */}
         <div className=" text-white absolute top-0">
             <div className=" lg:flex gap-12">
-            <img src={about?.backdrop_path===null?noinfo:imgurl+images[imageindex]?.file_path}></img>
+            <img className=" rounded-lg " loading="lazy" src={about?.backdrop_path===null?noinfo:imgurl+images[imageindex]?.file_path}></img>
             {
                 pid===null?"":<Playvideo  id={pid}></Playvideo>
             }

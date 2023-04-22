@@ -11,7 +11,25 @@
 
 body{
     background-color: #04152d;
+
 }
 body::-webkit-scrollbar{
     display: none;
+}
+
+.ovf::-webkit-scrollbar{
+ background-color: red;
+  height: 10px;
+  border-radius: 5px;
+}
+.ovf::-webkit-scrollbar-thumb{
+   background-color: white;
+   height: 10px;
+   border-radius: 5px;
+
+}
+@media (max-width:768px) {
+    .ovf::-webkit-scrollbar{
+        display: none;
+    }
 }

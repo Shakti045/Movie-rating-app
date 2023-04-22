@@ -4,12 +4,13 @@ import noposter from "../images/no-poster.png"
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import Img from "./Lazyload";
 function Format({id,original_title,backdrop_path,poster_path,release_date,vote_average,name,first_air_date}){
     let {imgurl}=useContext(Moviecontext);
     return (
       <Link to={`movie/${id}`}>
-          <div className="  p-1 rounded-lg w-[250px] h-[390px] truncate text-whit">
-         <img src={backdrop_path!=null?imgurl+backdrop_path:poster_path!=null?imgurl+poster_path:noposter} className="rounded-md h-[300px] w-[250px]"></img>
+          <div className="   rounded-lg w-[250px]  truncate text-whit">
+         <Img src={backdrop_path!=null?imgurl+backdrop_path:poster_path!=null?imgurl+poster_path:noposter} className="rounded-md "></Img>
          <h2>{original_title || name}</h2>
          <div className="flex justify-between">
          <p>{dayjs(release_date || first_air_date).format("MMM D, YYYY")}</p>

@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import{ Moviecontext } from "../Contextprovier/Moviecontext";
 import { useNavigate } from "react-router";
+import Img from "./Lazyload";
 
 function Searchsection(){
     let [background,setbackground]=useState(null);
-    let {getdata,imgurl}=useContext(Moviecontext);
+    let {getdata,imgurl,screenwidth}=useContext(Moviecontext);
     let [searchvalue,setsearchvalue]=useState("");
     let navigate=useNavigate();
       async function fetchdata(){
@@ -27,8 +28,18 @@ function Searchsection(){
      },[])
     return (
         <div className={`w-full relative`}>
-            <div className="w w-full flex flex-col items-center">
-                <img src={background} className="  w-[100vw] h-[60vh] -z-50"></img>
+            <div className=" opacity-40 w-full flex items-center">
+              {
+                screenwidth>700 &&
+                <>
+                <Img src={background} className="  w-[50vw] h-[70vh] -z-50"></Img>
+                <Img src={background} className="  w-[50vw] h-[70vh] -z-50"></Img>
+                </>
+              }
+              {
+               screenwidth<700 &&
+               <img src={background} className="  w-[100vw] h-[60vh] -z-50"></img>
+              }
             </div>
             <div className="absolute bottom-0 left-4  right-4"> 
            <form onSubmit={submithandler}>

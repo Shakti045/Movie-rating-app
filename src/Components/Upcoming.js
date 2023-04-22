@@ -16,15 +16,15 @@ function Upcoming(){
     },[type])
 
     return (
-        <div className=" text-white">
+        <div className=" text-white pt-6">
             <div className=" flex justify-around">
-            <h1>Upcoming</h1>
-            <div className=" flex gap-4">
-                <button onClick={()=>settype("movie")}>Movies</button>
-                <button onClick={()=>settype("tv")}>Tv Shows</button>
+            <h1 className=" font-bold text-xl bg-red-800 text-white p-2 flex items-center justify-center rounded-md">Upcoming</h1>
+            <div className=" text-lg bg-white rounded-md p-2  text-blue-950  flex gap-4">
+                <button className="  p-2 rounded-md focus:bg-yellow-500" onClick={()=>settype("movie")}>Movies</button>
+                <button  className="  p-2 rounded-md focus:bg-yellow-500"onClick={()=>settype("tv")}>Tv Shows</button>
             </div>
             </div>
-            <div className="flex gap-4 p-6 overflow-x-auto">
+            <div className=" ovf flex gap-4 pt-6 overflow-x-auto">
          {
             data.map((item)=>{
                 return <Format key={item?.id} {...item}></Format>
