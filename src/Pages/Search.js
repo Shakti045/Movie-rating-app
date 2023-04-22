@@ -13,6 +13,7 @@ function Search(){
     async function getdata(){
         let dataget=await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${Api_key}&query=${querry}&page=${page}`)
         let result=await dataget.json();
+      
         setpageinfo(result?.total_pages);
         let {results} =result;
         if(data.length>0){
@@ -22,15 +23,17 @@ function Search(){
         }else{
             setdata(results)
         }
-        console.log(result);
+  
     }
     function getnextpagedata(){
-        console.log("bro");
+        console.log("yyyy");
         setpage(page+1);
+        getdata();
     }
     useEffect(()=>{
         getdata();
-    },[querry,page])
+        setpage(1);
+    },[])
     return(
         <div>
             <h1 className=" font-bold text-xl bg-red-800 text-white p-2 inline rounded-md">Result for:{querry}</h1>
