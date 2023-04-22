@@ -29,7 +29,7 @@ function Trending(){
      }
     return (
         <div className="text-white pt-6">
-            <div className=" lg:flex justify-around">
+            <div className=" flex flex-col lg:flex-row gap-2 justify-around">
             <h1 className=" font-bold text-xl bg-red-800 text-white p-2 flex items-center justify-center rounded-md">Trending</h1>
             <div className=" text-lg   bg-white rounded-md p-2 text-blue-950  flex items-center justify-center lg:gap-4">
                 <button  className="  p-2 rounded-md focus:bg-yellow-500"  onClick={()=>settype("movie")}>Movies</button>
