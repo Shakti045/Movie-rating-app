@@ -42,7 +42,7 @@ function Searchsection(){
                <img src={background} className="  w-[100vw] h-[60vh] -z-50"></img>
               }
             </div>
-            <div className=""> 
+            <div className=" absolute bottom-0 right-4 left-4"> 
            <form className="bg-white mx-10 rounded-full flex" onSubmit={submithandler}>
            <input className=" border-none p-3 bg-transparent outline-none text-black w-full " type="text" onChange={searchhandler} placeholder="Search for  movie or anything...." value={searchvalue}></input>
            <button className=" p-3 mr-4 w-[100px] bg-cyan-600 text-white">Searh</button>
