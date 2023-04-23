@@ -27,13 +27,14 @@ function Searchsection(){
         fetchdata();
      },[])
     return (
-        <div className={`w-full relative`}>
-            <div className=" opacity-40 w-full flex items-center">
+        <div className={`w-full  relative`}>
+            <div className="   w-full  flex items-center">
               {
                 screenwidth>700 &&
                 <>
-                <Img src={background} className="  w-[50vw] h-[70vh] -z-50"></Img>
-                <Img src={background} className="  w-[50vw] h-[70vh] -z-50"></Img>
+                <Img src={background} className="  w-[50vw] h-[50vh] -z-50"></Img>
+                <Img src={background} className="  w-[50vw] h-[50vh] -z-50"></Img>
+             
                 </>
               }
               {
@@ -41,9 +42,10 @@ function Searchsection(){
                <img src={background} className="  w-[100vw] h-[60vh] -z-50"></img>
               }
             </div>
-            <div className="absolute bottom-0 left-4  right-4"> 
-           <form onSubmit={submithandler}>
-           <input className=" w-full p-3  bg-transparent border-2 rounded-md border-white text-white" type="text" onChange={searchhandler} placeholder="Search for  movie or anything...." value={searchvalue}></input>
+            <div className=""> 
+           <form className="bg-white mx-10 rounded-full flex" onSubmit={submithandler}>
+           <input className=" border-none p-3 bg-transparent outline-none text-black w-full " type="text" onChange={searchhandler} placeholder="Search for  movie or anything...." value={searchvalue}></input>
+           <button className=" p-3 mr-4 w-[100px] bg-cyan-600 text-white">Searh</button>
            </form>
             </div>
         </div>
