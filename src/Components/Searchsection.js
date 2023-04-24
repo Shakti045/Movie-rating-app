@@ -39,13 +39,13 @@ function Searchsection(){
               }
               {
                screenwidth<700 &&
-               <img src={background} className="  w-[100vw] h-[60vh] -z-50"></img>
+               <Img src={background} className="  w-[100vw] h-[60vh] -z-50"></Img>
               }
             </div>
             <div className=" absolute bottom-0 right-0 left-0"> 
-           <form className="bg-white mx-10 rounded-full flex" onSubmit={submithandler}>
+           <form className="bg-white mx-1 rounded-full flex" onSubmit={submithandler}>
            <input className=" border-none p-3 bg-transparent outline-none text-black w-full " type="text" onChange={searchhandler} placeholder="Search for  movie or anything...." value={searchvalue}></input>
-           <button className=" p-3 mr-4 w-[100px] bg-cyan-600 text-white">Searh</button>
+           <button className=" p-3 rounded-ful w-[100px] bg-cyan-600 text-white">Searh</button>
            </form>
             </div>
         </div>
